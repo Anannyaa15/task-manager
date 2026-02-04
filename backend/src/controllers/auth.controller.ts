@@ -35,9 +35,11 @@ export const login = async (req: Request, res: Response) => {
   const refreshToken = generateRefreshToken(user.id);
 
   res.cookie("refreshToken", refreshToken, {
-    httpOnly: true,
-    sameSite: "strict",
-  });
+  httpOnly: true,
+  secure: true,        // MUST be true in production
+  sameSite: "none",    // REQUIRED for cross-site cookies
+});
+
 
   res.json({ accessToken });
 };
