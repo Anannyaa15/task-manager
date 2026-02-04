@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+
+
+html, body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  transition: background 0.4s ease, color 0.3s ease;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+
+body {
+  color: #f8fafc;
+}
+
+
+h1, h2, h3, h4 {
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+
+p {
+  color: #e2e8f0;
+}
+
+
+
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    #7c3aed,
+    #2563eb,
+    #9333ea,
+    #0ea5e9
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+.dark body {
+  background: linear-gradient(-45deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+}
+
+.light body {
+  background: linear-gradient(
+    -45deg,
+    #c1dbf5,
+    #8091a6,
+    #526d90,
+    #b9afe3
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 20s ease infinite;
+  color: #0f172a;
+}
+.light .glass {
+  background: rgba(228, 197, 197, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.light input,
+.light textarea {
+  background: rgba(255, 255, 255, 0.8);
+  color: #0f172a;
+}
+
+.light input::placeholder {
+  color: #64748b;
+}
+
+
+
+
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+
+.glass:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+
+
+input, textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.6);
+}
+
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+} 
